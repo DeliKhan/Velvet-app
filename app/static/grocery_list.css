@@ -1,0 +1,131 @@
+body { 
+    background: url(grocery_list_background.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100%;
+    width:100%
+}
+
+html {
+    height:100%;
+    width:100%;
+}
+center{
+    height:100%;
+    width:100%;
+}
+
+#logo{
+    height:5em;
+    margin-left:5%;
+    margin-right:-5%;
+}
+
+h1{
+    font-family: 'Great Vibes', cursive;
+    font-size:9vw;
+    color:white;
+  
+}
+
+#item{
+    margin-right:6em;
+}
+
+#side{
+    height:8%;
+    margin-top:2em;
+    margin-right:4em;
+}
+
+#side3{
+    height:9%;
+    margin-top:2em;
+}
+#side2{
+    height:10%;
+    margin-top:2em;
+    margin-left:-20%;
+}
+#side1{
+    margin-top:2em;
+}
+
+#down {
+    height:4em;
+    width:7em;
+    -webkit-transform:rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+#up {
+    height:4em;
+    width:7em;
+}
+
+#down_button{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    border:none;
+}
+
+#up_button{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    border:none;
+}
+
+#checkbox_button{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    border:none;
+}
+
+h1{
+    font-family: 'Great Vibes', cursive;
+    font-size:9vw;
+    color:white;
+  
+}
+
+div.p-2.flex-grow-1{
+    margin-left:14%;
+}
+
+div.input-group{
+    width:70%;
+}
+
+input.form-control{
+    height:3.5em;
+    border-radius:3em;
+    font-size:1em;
+}
+
+button.btn.btn-success{
+    border-radius: 0em 3em 3em 0em;
+}
+
+h2{
+    font-family: 'Great Vibes', cursive;
+    font-size:5vw;
+    color:white;
+}
+
+#item{
+    margin-right:6em;
+}

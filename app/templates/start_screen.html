@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='start_screen.css') }}">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="{{url_for('static', filename='start_screen.js')}}"></script>
+    </head>
+    <body>
+        {% block content %}
+        <div class="container">
+            {% for message in get_flashed_messages() %}
+            <div class="alert alert-warning">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ message }}
+            </div>
+            {% endfor %}
+            
+            {% block page_content %}{% endblock %}
+        </div>
+        {% endblock %}
+        <center>
+            <img id="logo" src="../static/Velvet logo.png">
+            <div class="input-group mb-3">
+                <input id="recipe" type="text" class="form-control" placeholder="Search for recipes">
+                <div class="input-group-append">
+                    <button class="btn btn-success" id="submit_button" type="submit">Go</button> 
+                </div>
+            </div>
+            <button type="button" class="btn btn-light">Sign up</button>
+            <!--<a href="{{ url_for('welcome') }}"><button type="button" class="btn btn-light">Login</button></a>-->
+             <!-- Button to open the modal login form -->
+            <button type="button" class="btn btn-light" onclick="document.getElementById('id01').style.display='block'">Login</button>
+
+            <!-- The Modal -->
+            <div id="id01" class="modal">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+                <!-- Modal Content -->
+                <form class="modal-content animate" action="{{ url_for('handle_data') }}" method="post">
+                    <div class="imgcontainer">
+                        <img src="../static/avator icon.png" alt="Avatar" class="avatar">
+                    </div>
+
+                    <div class="container">
+                        <label for="uname"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Username" id="uname" name="uname" required>
+
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" id="psw" name="psw" required>
+
+                        <button type="submit" id="submit">Login</button>
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember"> Remember me
+                        </label>
+                    </div>
+
+                    <div class="container" style="background-color:#f1f1f1">
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                        <span class="psw">Forgot <a href="#">password?</a></span>
+                    </div>
+                </form>
+            </div> 
+        </center>
+    </body>
+</html>

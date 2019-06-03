@@ -1,0 +1,54 @@
+body { 
+    background: url(grocery_list_background.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100%;
+    width:100%
+}
+
+html {
+    height:100%;
+    width:100%;
+}
+center{
+    height:100%;
+    width:100%;
+}
+
+#logo{
+    height:5em;
+    margin-left:5%;
+    margin-right:-5%;
+}
+
+h1{
+    font-family: 'Great Vibes', cursive;
+    font-size:9vw;
+    color:white;
+  
+}
+
+#side{
+    height:5%;
+    margin-top:2em;
+    margin-right:4em;
+}
+
+#side3{
+    height:5%;
+    margin-top:2em;
+}
+#side2{
+    height:6%;
+    margin-top:2em;
+    margin-left:-20%;
+}
+#side1{
+    margin-top:2em;
+}
+
+.checked {
+  color: orange;
+}
