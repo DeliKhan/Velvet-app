@@ -8,8 +8,10 @@ import itertools
 
 socketio = SocketIO(app)
 def set_password(username,password):
+    #create hash for password
     hash = generate_password_hash(password)
     val = (username,hash)
+    #submit to database
     mydb = mysql.connector.connect(
       host="localhost",
       user="root",
@@ -23,6 +25,7 @@ def set_password(username,password):
     return "hi"
 
 def check_password(username,password):
+    #get info from database
     mydb = mysql.connector.connect(
       host="localhost",
       user="root",
@@ -30,9 +33,11 @@ def check_password(username,password):
       database="scrapped"
     )
     mycursor = mydb.cursor()
+    #fetch the password hash for the username
     mycursor.execute("SELECT password FROM users") #WHERE username = '%s';" % (username)) 
     myresult = mycursor.fetchall()
     for x in myresult:
+        #check the hash with the password
         if check_password_hash(str(x[0]),str(password)) == True:
             return redirect(url_for("welcome"))
         else:
