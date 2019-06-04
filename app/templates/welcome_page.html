@@ -12,7 +12,7 @@
         <div class="d-flex flex-column">
             <div class="d-flex justify-content-between">
                 <div class="p-2">
-                    <img id="logo" src="../static/Velvet logo.png">
+                    <a href="{{ url_for('welcome') }}"><img id="logo" src="../static/Velvet logo.png"></a>
                 </div>
                 <div class="p-2 flex-grow-1">
                     <div class="input-group mb-3">
@@ -47,28 +47,17 @@
         <div class="d-flex justify-content-center">
             <h1>Welcome Anmol!</h1>
         </div>
+        <div style="height:42px"></div>
         <div class="d-flex justify-content-around">
             <div class="p-2">
-                <a href="{{ url_for('myfridge') }}"><img id="choice" src="../static/my-fridge.png"></a>
+                <a href="{{ url_for('fridge') }}"><img id="choice" src="../static/my-fridge.png"></a>
             </div>
-            <div class="p-2">
-                <a href="#"><img id="choice" src="../static/my-feed.png"></a>
-            </div>
-            <div class="p-2">
-                <a href="#"><img id="choice" src="../static/recently-made.png"></a>
-            </div>
-        </div>
-        <div class="d-flex justify-content-around">
             <div class="p-2">
                 <a href="{{ url_for('groceries') }}"><img id="choice" src="../static/grocery-list.png"></a>
-            </div>
-            <div class="p-2">
-                <a href="#"><img id="choice" src="../static/discover.png"></a>
             </div>
             <div class="p-2">
                 <a href="https://food-guide.canada.ca/en/" target="_blank"><img id="choice" src="../static/canada-food-guide.png"></a>
             </div>
         </div>
-            
     </body>
 </html>

@@ -12,6 +12,17 @@ window.onclick = function(event) {
     const urlParams = new URLSearchParams(window.location.search);
     const myParam = urlParams.get('name');
     document.getElementById("add_item").value = myParam;
+    input = document.getElementById("add_item");
+    // Execute a function when the user releases a key on the keyboard
+    input.addEventListener("keyup", function(event) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        // Trigger the button element with a click
+        document.getElementById("submit_button").click();
+    }
+    }); 
 }
 
 //Since the user sent a query, this function will get the query string and send it too the server
@@ -253,3 +264,4 @@ $(document).on('click', 'a', function() {
     //image = card_major.getELementsByTagName("img")[0].getAttribute("src");
     
 //});
+

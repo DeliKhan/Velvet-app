@@ -275,9 +275,6 @@ def index():
 def welcome():
     return render_template("welcome_page.html")
 
-@app.route("/myfridge")
-def myfridge():
-    return render_template("my_fridge.html")
 ##Here is where the function for pulling the info about their fridge comes in "Deluckshan"
 ##Also the function for advising about if the person is getting enough nutrients "Ashwin"
 
@@ -332,7 +329,7 @@ def recipe():
 def settings():
     return render_template("settings.html")
 
-@app.route("/my_fridge")
+@app.route("/fridge")
 def fridge():
     return render_template("my_fridge.html")
 
