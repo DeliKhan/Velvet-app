@@ -17,10 +17,10 @@ function drawChart() {
 
   var data = google.visualization.arrayToDataTable([
     ['Food Group', 'Serving'],
-    ['Meats and Alternatives', 11],
-    ['Grains', 2],
-    ['Vegetables', 2],
-    ['Milk and Alternatives', 2],
+    ['Meats and Alternatives', 2],
+    ['Grains', 1],
+    ['Fruits and Vegetables', 12],
+    ['Milk and Alternatives', 1],
   ]);
 
   var options = {
