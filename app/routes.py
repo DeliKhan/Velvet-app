@@ -286,7 +286,9 @@ def search():
     return render_template("search.html")
 #    endresult = searcher(query)
 @socketio.on('searcher')
+#When javascript sends me what the user is searching,along with filters, this code is executed
 def handle_searcher(query):
+    #if there are no filters, do a different kind of search, which is much faster than the one that takes filters
     if len(list(query.keys())) == 1:
             quick_search(query)
     else:
@@ -305,6 +307,7 @@ def handle_searcher(query):
         weight = "(rel1*3)+rel2+(rel3*0.75)+ (rel4*0.5) + (rel5*2)"
         #This will build the sql command, based on whats given
         sql = "SELECT *, "
+        #create sql command to send to mysql database
         for q in query.keys():
             if list(query.keys()).index(q) == len(list(query.keys()))-1:
                 sql +="MATCH(%s) AGAINST('%s') AS rel%s " % (q,query[q],list(query.keys()).index(q)+1)
