@@ -89,16 +89,22 @@ def food_guide_checker(userAge,userGender,userVeg,userGrai,userMilk,userMeat):
     #for i in tableDataNum:
     #    num = i.contents[0]
     #    numList.append(num)
+    #Database is initialized with host, user and password
     mydb = mysql.connector.connect(
       host="localhost",
       user="root",
       passwd="DM29243011",
       database="scrapped"
     )
+    #
     mycursor = mydb.cursor()
+    #Section of database is highlighted
     sql = "SELECT work FROM canadianfoodguide"
+    #Sql isactivated
     mycursor.execute(sql)
+    #Fetch all data from this section
     myresult = mycursor.fetchall()
+    #Split the numbers into individual strings
     numList = myresult[0][0].split(",")
     if userAge == 2 or userAge == 3:
         guideVeg = int(numList[14])
