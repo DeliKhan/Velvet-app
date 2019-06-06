@@ -22,14 +22,16 @@ def updator(alpha):
     #scrap the website
     page = requests.get(url)
     page_content = BeautifulSoup(page.content,features="lxml") # get page content
-    #analyze for certain perameters
+    #analyze to get a list of all recipes that start with that letter
     recipe_list = page_content.find_all("ul",{"class":"m-PromoList o-Capsule__m-PromoList"})
     recipes = {}
     for t in recipe_list:
         alls = t.find_all("li")
         for g in alls:
             recipes[g.text] = g.find("a")["href"]
+  
     for recipe in recipes.keys():
+        #Get link to each recipe
         try:
             dish = requests.get("http:" + recipes[recipe])
         except:
@@ -37,6 +39,9 @@ def updator(alpha):
                 dish = requests.get("http:/" + recipes[recipe])
             except:
                 dish = requests.get("http://foodnetwork.com" + recipes[recipe])
+        #analyze each of these recipe links for more details (time,ingredients,etc.)
+        #IK, alot of try and excepts. That's cause there is no one format for all recipes. Each one may look slightly different, making it
+        #difficult to scrap with just one ruleset
         dish_content = BeautifulSoup(dish.content,features="lxml")
         try:
             hardness = dish_content.find("ul",{"class":"o-RecipeInfo__m-Level"}).find("span",{"class":"o-RecipeInfo__a-Description"}).text
@@ -75,6 +80,7 @@ def updator(alpha):
         directions = []
         for dirs in directions_temp:
             directions.append(dirs.text.strip())
+        #I can't use commas cause the directions have them. So, to ensure proper splitting, I use a random set of letters
         directions_list = "?!?@".join(directions)
         #JSON[recipe] = [hardness,time,prep,cook,servings,rating,image,ingredients,directions]
     #return JSON
