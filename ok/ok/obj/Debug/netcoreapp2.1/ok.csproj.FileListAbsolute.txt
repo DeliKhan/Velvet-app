@@ -1,0 +1,11 @@
+C:\Users\prabh\source\repos\ok\ok\bin\Debug\netcoreapp2.1\ok.deps.json
+C:\Users\prabh\source\repos\ok\ok\bin\Debug\netcoreapp2.1\ok.runtimeconfig.json
+C:\Users\prabh\source\repos\ok\ok\bin\Debug\netcoreapp2.1\ok.runtimeconfig.dev.json
+C:\Users\prabh\source\repos\ok\ok\bin\Debug\netcoreapp2.1\ok.dll
+C:\Users\prabh\source\repos\ok\ok\bin\Debug\netcoreapp2.1\ok.pdb
+C:\Users\prabh\source\repos\ok\ok\obj\Debug\netcoreapp2.1\ok.csprojAssemblyReference.cache
+C:\Users\prabh\source\repos\ok\ok\obj\Debug\netcoreapp2.1\ok.csproj.CoreCompileInputs.cache
+C:\Users\prabh\source\repos\ok\ok\obj\Debug\netcoreapp2.1\ok.AssemblyInfoInputs.cache
+C:\Users\prabh\source\repos\ok\ok\obj\Debug\netcoreapp2.1\ok.AssemblyInfo.cs
+C:\Users\prabh\source\repos\ok\ok\obj\Debug\netcoreapp2.1\ok.dll
+C:\Users\prabh\source\repos\ok\ok\obj\Debug\netcoreapp2.1\ok.pdb
