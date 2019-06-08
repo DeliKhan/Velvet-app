@@ -1,7 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-from flask import Flask
-from flask_socketio import SocketIO
 import time
 import json
 from multiprocessing import Pool
