@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-import time
 import json
 from multiprocessing import Pool
 from lxml.html import fromstring
@@ -85,7 +84,6 @@ def updator(alpha):
 if __name__ == '__main__':
     #a thread per alphabet letter to speed things up
     pool = Pool(processes=25)##run 25 seperate threads
-    start = time.time()
     record = pool.map(updator, alphabet) ##map out each process's results to a single list
     pool.terminate()
     pool.join()
@@ -112,12 +110,13 @@ if __name__ == '__main__':
     #directions = text
     mycursor = mydb.cursor()
     #insert into database
-    sql = "INSERT INTO foodnetwork (name,hardness,total,prep,cooking,servings,rating,image,ingredients,directions) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) ON DUPLICATE KEY UPDATE name = VALUES(name),hardness = VALUES(hardness),total = VALUES(total),prep = VALUES(prep),cooking = VALUES(cooking),servings = VALUES(servings),rating = VALUES(rating),image = VALUES(image),ingredients = VALUES(ingredients),directions = VALUES(directions);"
+    sql = "INSERT INTO foodnetwork (name,hardness,total,prep,cooking,servings,rating,image,ingredients,directions) VALUES (%s, %s, %s, 
+    %s, %s, %s, %s, %s, %s, %s) ON DUPLICATE KEY UPDATE name = VALUES(name),hardness = VALUES(hardness),total = VALUES(total),
+    prep = VALUES(prep),cooking = VALUES(cooking),servings = VALUES(servings),rating = VALUES(rating),image = VALUES(image),
+    ingredients = VALUES(ingredients),directions = VALUES(directions);"
     
     mycursor.executemany(sql,final)
     mydb.commit()
-    end = time.time()
-    print(end-start)
 
 #with open("data.json","w") as outfile:
 #    json.dump(final, outfile)
