@@ -8,9 +8,6 @@ import mysql.connector
 import itertools
 database = []
 allergies=""
-food = open("ingredients.txt","r")
-ingredients_compare = food.readlines()
-food.close()
 alphabet = ["123","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","xyz"]
 
 def updator(alpha):
