@@ -112,7 +112,11 @@ if __name__ == '__main__':
     #directions = text
     mycursor = mydb.cursor()
     #insert into database
-    sql = "INSERT INTO foodnetwork (name,hardness,total,prep,cooking,servings,rating,image,ingredients,directions) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) ON DUPLICATE KEY UPDATE name = VALUES(name),hardness = VALUES(hardness),total = VALUES(total),prep = VALUES(prep),cooking = VALUES(cooking),servings = VALUES(servings),rating = VALUES(rating),image = VALUES(image),ingredients = VALUES(ingredients),directions = VALUES(directions);"
+    sql = "INSERT INTO foodnetwork (name,hardness,total,prep,cooking,servings,rating,image,ingredients,directions) VALUES (%s, %s, %s, 
+    %s, %s, %s, %s, %s, %s, %s) ON DUPLICATE KEY UPDATE name = VALUES(name),hardness = VALUES(hardness),total = VALUES(total),
+    prep = VALUES(prep),cooking = VALUES(cooking),servings = VALUES(servings),rating = VALUES(rating),image = VALUES(image),
+    ingredients = VALUES(ingredients),directions = VALUES(directions);"
+    
     mycursor.executemany(sql,final)
     mydb.commit()
     end = time.time()
