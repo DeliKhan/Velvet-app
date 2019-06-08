@@ -114,8 +114,9 @@ if __name__ == '__main__':
     %s, %s, %s, %s, %s, %s, %s) ON DUPLICATE KEY UPDATE name = VALUES(name),hardness = VALUES(hardness),total = VALUES(total),
     prep = VALUES(prep),cooking = VALUES(cooking),servings = VALUES(servings),rating = VALUES(rating),image = VALUES(image),
     ingredients = VALUES(ingredients),directions = VALUES(directions);"
-    
+    #execute the command for each value in the list
     mycursor.executemany(sql,final)
+    #save changes
     mydb.commit()
 
 #with open("data.json","w") as outfile:
